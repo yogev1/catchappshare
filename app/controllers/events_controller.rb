@@ -1,4 +1,8 @@
 class EventsController < ApplicationController
-  def show
+  def show		 
   end
+end
+
+def user_params
+  params.require(:pic).permit(:image)
 end

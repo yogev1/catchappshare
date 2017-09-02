@@ -27,7 +27,7 @@ gem 'httparty'
 gem 'browser'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 # Use Unicorn as the app server
 # gem 'unicorn'
 

@@ -1,11 +1,10 @@
+<% if browser.platform.ios? %>
+  <h4 style="padding-bottom: 5px">Get The App.</h4>          
+  <a href="https://itunes.apple.com/us/app/catchapp-the-social-network/id1224755049?mt=8"><%= image_tag "appstore.jpg", size: "120x35" %></a>
+<% else %>  
+  <%= render '/events/event_card' %>  
+<% end %>
 
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-12 text-center">
-      <h1 style="font-size: 400%">Event Category: </h1>
-    </div>
-  </div>
-</div>
 
 
