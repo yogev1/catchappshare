@@ -1,6 +1,5 @@
 <% if browser.platform.ios? %>
-  <h4 style="padding-bottom: 5px">Get The App.</h4>          
-  <a href="https://itunes.apple.com/us/app/catchapp-the-social-network/id1224755049?mt=8"><%= image_tag "appstore.jpg", size: "120x35" %></a>
+  <%= render '/events/ios_card' %>
 <% else %>  
   <%= render '/events/event_card' %>  
 <% end %>
