@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  get ':id' => 'events#show'
+  get 'eventsLink/:id' => 'events#show' 
 
   resources :pages do 
     collection do
