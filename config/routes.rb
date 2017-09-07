@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       get :term
       get :train 
       get :privacy
+      get :location
     end
   end 
   

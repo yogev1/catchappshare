@@ -2,19 +2,19 @@
 <footer class="padl footer">
   <div class="container-fluid font">
     <div class="row">
-      <div class="col-md-12 col-xs-12" style="padding-top: 10px">
-        <h4 class="grey"><%= "\u00A9" %> We Are CatchApp - Meet for Sports</h4> 
+      <div class="col-md-6 col-xs-12" style="padding-top: 10px">
+        <div class="row">
+          <h4 style="padding-left:15px"><%= link_to "ABOUT US", style: "color: #005ce6" %></h4>
+          <h4 style="padding-left:15px"><%= link_to "SUPPORT", contact_pages_path, style: "color: #005ce6" %></h4>
+          <h4 style="padding-left:15px"><%= link_to "PRESS", style: "color: #005ce6" %></h4>
+          <h4 style="padding-left:15px"><%= link_to "PRIVACY", privacy_pages_path, style: "color: #005ce6" %></h4>
+          <h4 style="padding-left:15px"><%= link_to "TERMS", term_pages_path, style: "color: #005ce6" %></h4>
+        </div>  
       </div>
-
-      <div class="col-md-6 col-xs-12">
-        <div class="row" style="padding-top: 10px">
-          <h4 style="padding-left:15px"><%= link_to "Contact", contact_pages_path, style: "color: #606060" %></h4>
-          <h4 style="padding-left:15px"><%= link_to "Privacy Policy", privacy_pages_path, style: "color: #606060" %></h4>
-          <h4 style="padding-left:15px"><%= link_to "Terms", term_pages_path, style: "color: #606060" %></h4>
-          <h4 style="padding-left:15px"><%= link_to "Trainers", train_pages_path, style: "color: #606060" %></h4>
-        </div>                          
+      <div class="col-md-3 col-md-push-2 col-xs-12" style="padding-top: 10px">
+        <h4 class="grey"><%= "\u00A9" %><%= link_to "CATCHAPP 2017", location_pages_path, style: "color: #606060" %></h4>                                     
       </div>  
-      <div class="col-md-4 col-xs-12">
+      <div class="col-md-3 col-md-push-1 col-xs-12">
         <div class="sm" style="padding-left:15px">
           <a href="https://www.facebook.com/wearecatchapp/"><%= image_tag "fb_icon.png", class: "img-responsive" %></a>
           <a href="#" ><%= image_tag "LI-icon.png", class: "img-responsive" %></a>
