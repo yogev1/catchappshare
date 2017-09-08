@@ -15,6 +15,7 @@ class EventsController < ApplicationController
     @start_day = Date::DAYNAMES[Time.at(@event["event"]["start_date"]).to_datetime.wday]
     @end_day = Date::DAYNAMES[Time.at(@event["event"]["end_date"]).to_datetime.wday]
   	@start_month = Date::MONTHNAMES[Time.at(@event["event"]["start_date"]).to_datetime.month]
+    @start_month_big = Date::MONTHNAMES[Time.at(@event["event"]["start_date"]).to_datetime.month].chars.take(3).join.upcase
     @end_month = Date::MONTHNAMES[Time.at(@event["event"]["end_date"]).to_datetime.month] 
     @year_start = Time.at(@event["event"]["start_date"]).to_datetime.year
     @year_end = Time.at(@event["event"]["end_date"]).to_datetime.year
