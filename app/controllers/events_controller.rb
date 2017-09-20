@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   def show
   	firstres = HTTParty.get("http://devapi.wearecatchapp.com/catchapp-server/api/unauth/login?username=logicsports@icloud.com&password=zzz123")
   	auth = firstres.body.inspect.split('\\')[11].gsub(/"/, '')
-  	@event = HTTParty.get("http://devapi.wearecatchapp.com/catchapp-server/api/event/search?external_code=HPCBPZ", 
+  	@event = HTTParty.get("http://devapi.wearecatchapp.com/catchapp-server/api/event/search?external_code=Xbkqsz", 
   		      "headers": {
           "Authorization"=> "#{auth}"
         })
