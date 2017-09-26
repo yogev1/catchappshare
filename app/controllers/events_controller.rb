@@ -2,10 +2,13 @@ class EventsController < ApplicationController
   def show
   	firstres = HTTParty.get("http://devapi.wearecatchapp.com/catchapp-server/api/unauth/login?username=logicsports@icloud.com&password=zzz123")
   	auth = firstres.body.inspect.split('\\')[11].gsub(/"/, '')
-  	@event = HTTParty.get("http://devapi.wearecatchapp.com/catchapp-server/api/event/search?external_code=Xbkqsz", 
-  		      "headers": {
-          "Authorization"=> "#{auth}"
-        })
+  	@event = HTTParty.get("http://devapi.wearecatchapp.com/catchapp-server/api/event/opensearch?external_code=Xbkqsz")
+    # , 
+  		#       "headers": {
+    #       "Authorization"=> "#{auth}"
+    #     })
+
+    #  date and time extraction
     @hour_start = Time.at(@event["event"]["start_date"]).to_datetime.hour
     @min_start = Time.at(@event["event"]["start_date"]).to_datetime.min
     @hour_end = Time.at(@event["event"]["end_date"]).to_datetime.hour
@@ -20,6 +23,31 @@ class EventsController < ApplicationController
     @year_start = Time.at(@event["event"]["start_date"]).to_datetime.year
     @year_end = Time.at(@event["event"]["end_date"]).to_datetime.year
     @end_time = Time.at(@event["event"]["end_of_life_date"]).to_datetime
+
+    # organizer level
+    level = @event["event"]["creator_level"]
+    case level
+    when 1
+      @level_image = "Level_1H.png"
+    when 2
+      @level_image = "Level_1H.png"
+    when 3
+      @level_image = "Level_1H.png"
+    when 4
+      @level_image = "Level_1H.png"
+    when 5
+      @level_image = "Level_1H.png"
+    when 6
+      @level_image = "Level_6H.png"
+    when 7
+      @level_image = "Level_1H.png"
+    when 8
+      @level_image = "Level_1H.png"
+    when 9
+      @level_image = "Level_1H.png"
+    when 10
+      @level_image = "Level_1H.png"
+    end
   end
 end
 
