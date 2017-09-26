@@ -1,14 +1,14 @@
 
 <div class="row font">
-  <div class="col-md-2 col-sm-2 col-xs-2 grey">
+  <div class="col-md-2 col-sm-2 col-xs-12 grey">
   </div>
-  <div class="col-md-5 col-sm-5 col-xs-5">
-    <div class="col-md-3 col-sm-3 col-xs-3">
+  <div class="col-md-5 col-sm-5 col-xs-12">
+    <div class="col-md-3 col-sm-3 col-xs-12">
     </div>  
-    <div class="col-md-3 col-sm-3 col-xs-3 pad">
-      <%= image_tag "yourAppIcon@2x.png", class: "img-responsive", size: "100x100" %>
+    <div class="col-md-3 col-sm-3 col-xs-12 pad" align="center">
+      <%= image_tag "yourAppIcon@2x.png", class: "img-responsive block-center", size: "100x100" %>
     </div>
-    <div class="col-md-3 col-sm-3 col-xs-3" style="padding-top: 6%">  
+    <div class="col-md-3 col-sm-3 col-xs-12" style="padding-top: 6%" align="center">  
       <%= image_tag "catchAppTitleColored.png", class: "img-responsive pad", size:"150x80" %>
     </div>
     <div class="col-md-3 col-sm-3 col-xs-3">
@@ -21,26 +21,26 @@
   <div class="col-md-2 col-sm-2 col-xs-2 grey" align="center">
   </div>  
   <!-- if organizer -->
-  <div class="col-md-5 col-xs-5 col-sm-5 pad text-center">
+  <div class="col-md-5 col-xs-12 col-sm-5 pad text-center" align="center">
     <h1 style="font-size: 250%">My <%= @event["event"]["activity"]["name"] %> Event</h1><br>
     <h1 class="text-center" style="font-size: 150%">Organizer's Level: <%= image_tag @level_image %></h1>
   </div>
-  <div class="col-md-5 col-sm-5 col-xs-5 grey">
+  <div class="col-md-5 col-sm-5 col-xs-12 grey">
   </div>    
 </div> 
 <!-- end -->
 <div class="row font">
-  <div class="col-md-2 col-sm-2 col-xs-2 grey">
+  <div class="col-md-2 col-sm-2 col-xs-12 grey">
   </div>      
-  <div class="col-md-5 col-xs-5 col-sm-5 pad text-center font pic" style="background-image: url('<%= @event["event"]["activity"]["landscape_image_url"] %>'); z-index: 0">
+  <div class="col-md-5 col-xs-12 col-sm-5 pad text-center font pic" style="background-image: url('<%= @event["event"]["activity"]["landscape_image_url"] %>'); z-index: -5">
   </div>
-  <div class="col-md-5 col-sm-5 col-xs-5 grey">
+  <div class="col-md-5 col-sm-5 col-xs-12 grey">
   </div>           
 </div> 
 <div class="row font">
-  <div class="col-md-2 col-sm-2 col-xs-2 grey">
+  <div class="col-md-2 col-sm-2 col-xs-12 grey">
   </div>     
-  <div class="col-md-5 col-xs-5 col-sm-5 text-center">
+  <div class="col-md-5 col-xs-12 col-sm-5 text-center">
     <div class="col-md-2 col-xs-2 col-sm-2">    
       <h2 class="font-lg"><%= @start_month_big %></h2>
       <h2 style="font-size: 350%" class="font-sm"><%= @num_start %></h2>
@@ -69,7 +69,7 @@
     </div>
     <div class="col-md-1 col-xs-1 col-sm-1">         
     </div>       
-    <div class="col-md-4 col-xs-4 col-sm-4">
+    <div class="col-md-4 col-xs-4 col-sm-4" style="padding-left:8%">
       <div class="row">
         <h2 class="font-sm"><%= @start_day %>, <%= @start_month %> <%= @num_start %>, <%= @year_start %></h2> 
       </div> 
@@ -146,14 +146,24 @@
 <div class="row">
   <div class="col-md-2 col-xs-2 col-sm-2 grey">
   </div>   
-  <div class="col-md-5 col-xs-5 col-sm-5 text-center border">
+  <div class="col-md-5 col-xs-12 col-sm-5 text-center border">
     <div class="row">
-      <div class="col-md-2 col-xs-2 col-sm-2 text-center">
-      </div>      
-      <a href="https://itunes.apple.com/us/app/catchapp-the-social-network/id1224755049?mt=8"><%= image_tag "appstore.png", class: "img-responsive", size: "180x100", align: "center" %></a>
-      <a href="#"><%= image_tag "group2Copy4.png", class: "img-responsive", size: "180x100", align: "center" %></a>  
+      <div class="col-md-1 col-sm-2 text-center">
+      </div>
+      <div class="row">
+        <div class="col-xs-1">
+        </div>  
+      <div class="col-xs-5">      
+        <a href="https://itunes.apple.com/us/app/catchapp-the-social-network/id1224755049?mt=8"><%= image_tag "appstore.png", class: "img-responsive", size: "180x100", align: "center" %></a>
+      </div>
+      <div class="col-xs-5">
+        <a href="#"><%= image_tag "group2Copy4.png", class: "img-responsive", size: "180x100", align: "center" %></a>
+      </div>
+              <div class="col-xs-1">
+        </div>
+      </div>    
     </div>   
   </div>   
-  <div class="col-md-5 col-xs-5 col-sm-5 grey">
+  <div class="col-md-5 col-sm-5 grey">
   </div>                       
 </div>
