@@ -85,7 +85,12 @@
   <div class="col-md-2 col-sm-2 col-xs-2 grey">
   </div>  
   <div class="col-md-5 col-xs-5 col-sm-5 text-center border">
-    <h2 class="text-center bold font-lg">Awaiting More Participants</h2><br>
+    <% more = @event["event"]["participants_required"].to_i - @event["event"]["participants"].count %>
+    <% if more > 0 %>
+      <h2 class="text-center bold font-lg">Awaiting More Participants</h2><br>
+    <% else %>
+      <h2 class="text-center bold font-lg">Participants quota reached!</h2><br>
+    <% end %>  
     <div class="row font">
       <div class="col-md-3 col-xs-3 col-sm-3">
         <h2 class="text-center"><%= image_tag "mixedColor.png" %></h2>
@@ -97,7 +102,6 @@
         <h2 class="text-center font-lg"> | </h2>
       </div>
       <div class="col-md-6 col-xs-6 col-sm-6">
-        <% more = @event["event"]["participants_required"].to_i - @event["event"]["participants"].count %>
         <% expire = ((Time.zone.now - @end_time) / 1.day).to_i.abs + 1 %>
         <h2 class="text-center font-sm"><%= @event["event"]["participants_required"].to_i %> Participants Required.<br>  <%= more %> More needed within <%= expire %> days</h2>
       </div>                        
