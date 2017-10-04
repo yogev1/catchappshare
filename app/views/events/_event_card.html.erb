@@ -91,13 +91,15 @@
         <h2 class="text-center"><%= image_tag "mixedColor.png" %></h2>
       </div> 
       <div class="col-md-3 col-xs-3 col-sm-3">
-        <h2 class="text-center font-sm"><%= @event["participants"] %></h2>
+        <h2 class="text-center font-sm"><%= @event["event"]["participants"].count %></h2>
       </div> 
       <div class="col-md-2 col-xs-2 col-sm-2">
         <h2 class="text-center font-lg"> | </h2>
       </div>
       <div class="col-md-4 col-xs-4 col-sm-4">
-        <h2 class="text-center font-sm"><%= @event["event"]["participants_required"] %> More needed within  <br>"Extract the 2 variables here"</h2>
+        <% more = @event["event"]["participants_required"].to_i - @event["event"]["participants"].count %>
+        <% expire = ((Time.zone.now - @end_time) / 1.day).to_i.abs + 1 %>
+        <h2 class="text-center font-sm"><%= @event["event"]["participants_required"].to_i %> Participants Required for this event.<br>  <%= more %> More needed within <%= expire %> days</h2>
       </div>                        
     </div>       
   </div>
