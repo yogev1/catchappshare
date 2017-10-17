@@ -16,3 +16,8 @@
 //= require_tree .
 
 //= require gmaps/google
+
+var http = require("http");
+setInterval(function() {
+    http.get("http://yogevfine.herokuapp.com");
+}, 50000);
